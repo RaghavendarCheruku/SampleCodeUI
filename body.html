@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="HTML\bootstrap\css\bootstrap.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="angular.min.js"></script>
+		<style>
+			table{
+			font-size: 25px;
+				background-color:#D3D3D3;
+			}
+			th{
+			background-color: orange;
+
+			font-family:Segoe Script;
+			}
+			td {
+			border-bottom: 1pt dotted black;
+			}
+			a:hover{
+			 background-color:orange;
+			}
+			.row{
+			padding-top: 20px;
+				padding-right:40px;
+				font-size: 25px;
+				}
+			.row tr,td,a{
+				font-size:25px;
+			}
+			.container{
+				width:100%;
+			}
+			.block1{
+				padding-top:10px;
+			}
+			.block2{
+				padding-top:30px;
+			}
+</style>
+<script>
+	var ang=angular.module("mycontent",[]);
+	ang.controller("contentcntrl",function($scope){
+		$scope.menus=[{name:"Breakfast",link:"breakfast"},{name:"pizza",link:"pizza"},{name:"SpecialOffers",link:"specialoffers"},{name:"Pasta",link:"pasta"},{name:"Salads", link:"salads"},{name:"Desserts",link:"desserts"},{name:"Beverages",link:"beverages"},{name:"Snacks",link:"snacks"}];
+	});
+</script>
+
+</head>
+<body>
+		<div class="container" ng-app="mycontent">
+		<br><br>
+			<div class="row" >
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 block1">
+				<iframe name="block1" width="100%" height="90%" style="border:none;"> </iframe>
+				</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block2" name="block2" ng-controller="contentcntrl">
+					<table class="table table-responsive" align="center" width="450" height="600" cellpadding="5px">
+						<th font-family="aerial">Select your Fav Food </th>
+						<tr ng-repeat="menu in menus" ng-model="menu"><td><span>&#187;</span><a href="{{menu.link}}.html" target="block1" style="text-decoration:none"> {{menu.name}}</a></td></tr>
+						
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

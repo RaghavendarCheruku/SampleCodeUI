@@ -1,0 +1,188 @@
+<html>
+<head>
+<link rel="stylesheet" href="HTML\bootstrap\css\bootstrap.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="angular.min.js"></script>
+<style>
+body{
+	font-size:25px;
+	text-align:center;
+}
+.container{
+	margin-top:50px;
+	margin-left:60px;
+	width:90%;
+}
+.caption, {
+padding-left:20px;
+}
+.thumbnail {
+	width:100px;
+	height:100px;
+	margin-bottom:70px;
+}
+.head h1{
+font-family:Segoe Script;
+margin-top:2px;
+}
+.head1{
+padding-left:80px;
+font-size:20px;
+}
+.head1_sub{
+font-size:12px;
+}
+.rupee{
+font-size: 25px;
+padding-top:5px;
+margin-top:10px;
+}
+.text-justify {
+font-size:15px;
+}
+</style>
+<script>
+var app=angular.module("myBeverage",[]);
+app.controller("bevcontrl",function($scope){
+	$scope.img="logo.png";
+	$scope.descp=[{name:"Drink A",descrption:"Description about drink ADescription about drink ADescription about drink ADescription about drink ADescription about drink A"}];
+	$scope.descp1=[{name:"Drink B",descrption:"Description about drink ADescription about drink ADescription about drink ADescription about drink ADescription about drink A"}];
+	$scope.descp2=[{name:"Drink C",descrption:"Description about drink ADescription about drink ADescription about drink ADescription about drink ADescription about drink A"}];
+	$scope.descp3=[{name:"Drink D",descrption:"Description about drink ADescription about drink ADescription about drink ADescription about drink ADescription about drink A"}];
+	$scope.rates=[{price:0.99,quan:"0.25!"},{price:1.25,quan:"0.33!"},{price:1.99,quan:"0.75!"},{price:2.25,quan:"1.00!"}];
+});
+</script>
+</head>
+<body >
+<h1> Beverages</h1>
+<div class="container " ng-app="myBeverage" >
+	<div class="row" ng-controller="bevcontrl">
+		<div class="thumbnail  col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
+			<img ng-src="{{img}}" >
+		</div>
+		<div class="" ng-repeat="d in descp" ng-model="d">
+		<div class=" col-xs-4 col-sm-4 col-md-4 head  " ><h1 font-size="20px">{{d.name}} <sup>* (1)</sup> </h1>
+			<p class="text-justify" font-size="10px">{{d.descrption}} </p>
+		</div>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 head1" >
+			<div  class="row" >
+				<div class="" ng-repeat="rate in rates" ng-model="rate">
+				<div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3"  >
+					<table>
+					
+					<tr class="head1"><td  >{{rate.price}}</td></tr>
+					
+					<tr><td class="head1_sub" >{{rate.quan}}<span class="glyphicon glyphicon-shopping-cart"></td></tr>
+					
+					</table>
+				</div>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 rupee">
+			<span class="rupee">&#x20B9;</span>
+		</div>
+	</div>
+
+	<div class="row" ng-controller="bevcontrl">
+		<div class="thumbnail  col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
+			<img ng-src="{{img}}" >
+		</div>
+		<div class="" ng-repeat="d in descp1" ng-model="d">
+		<div class=" col-xs-4 col-sm-4 col-md-4 col-lg-4 head  " ><h1 font-size="20px">{{d.name}} <sup>* (1)</sup> </h1>
+			<p class="text-justify" font-size="10px">{{d.descrption}} </p>
+		</div>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  head1">
+			<div  class="row">
+				<div class="" ng-repeat="rate in rates" ng-model="rate">
+					<div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3"  >
+						<table>
+						
+						<tr class="head1"><td  >{{rate.price}}</td></tr>
+						
+						<tr><td class="head1_sub" >{{rate.quan}}<span class="glyphicon glyphicon-shopping-cart"></td></tr>
+						
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 rupee">
+			<span >&#x20B9;</span>
+		</div>
+	</div>
+	
+	
+	<div class="row" ng-controller="bevcontrl">
+		<div class="thumbnail  col-xs-3 col-sm-3 col-md-3 col-lg-3   ">
+			<img ng-src="{{img}}" >
+		</div>
+		<div class="" ng-repeat="d in descp2" ng-model="d">
+		<div class=" col-xs-4 col-sm-4 col-md-4 col-lg-4 head  " ><h1 font-size="20px">{{d.name}} <sup>* (1)</sup> </h1>
+			<p class="text-justify" font-size="10px">{{d.descrption}} </p>
+		</div>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  head1">
+			<div  class="row">
+				<div class="" ng-repeat="rate in rates" ng-model="rate">
+					<div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3"  >
+						<table>
+						
+						<tr class="head1"><td  >{{rate.price}}</td></tr>
+						
+						<tr><td class="head1_sub" >{{rate.quan}}<span class="glyphicon glyphicon-shopping-cart"></td></tr>
+						
+						</table>
+					</div>
+				</div>
+			
+			</div>
+			
+		</div>
+		<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 rupee">
+			<span class="rupee">&#x20B9;</span>
+		</div>
+	</div>
+	
+	
+	<div class="row" ng-controller="bevcontrl">
+		<div class="thumbnail col-xs-3 col-sm-3 col-md-3 col-lg-3   ">
+			<img ng-src="{{img}}" >
+		</div>
+		<div class="" ng-repeat="d in descp3" ng-model="d">
+		<div class=" col-xs-4 col-sm-4 col-md-4 col-lg-4 head" ><h1 font-size="20px">{{d.name}} <sup>* (1)</sup> </h1>
+			<p class="text-justify" font-size="10px">{{d.descrption}} </p>
+		</div>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  head1">
+			<div  class="row">
+				<div class="" ng-repeat="rate in rates" ng-model="rate">
+					<div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3"  >
+						<table>
+						
+						<tr class="head1"><td  >{{rate.price}}</td></tr>
+						
+						<tr><td class="head1_sub" >{{rate.quan}}<span class="glyphicon glyphicon-shopping-cart"></td></tr>
+						
+						</table>
+					</div>
+				</div>
+		
+			</div>
+			
+		</div>
+		<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 rupee">
+			<span class="rupee">&#x20B9;</span>
+		</div>
+	</div>
+
+	
+</div>
+
+</body>
+</html>

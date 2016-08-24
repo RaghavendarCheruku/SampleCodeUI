@@ -1,0 +1,78 @@
+<html>
+<head>
+<link rel="stylesheet" href="HTML\bootstrap\css\bootstrap.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="angular.min.js"></script>
+<script>
+	var angular=angular.module("roadiesApp",[]);
+	angular.controller("roadiesController",function($scope){
+		$scope.heading="Roadies Food";
+		$scope.image="htdocs\javaUI\anjularJs\logo.png"
+	});
+	angular.controller("roadiesController1",function($scope){
+		$scope.lists=['Home','contact Us','About US'];
+		});
+	
+</script>
+<style>
+.left_content {
+font-family: Segoe Script;
+font-size:30;
+float:left;
+margin-top:30;
+margin-left:0;
+margin-right:0
+padding-top:30;	
+height:100;
+}
+.right_content ul li  {
+list-style-type:none;
+display:inline;
+float:right;
+padding:20;
+height:100;
+margin-right:20
+}
+.right_content ul li a{
+	list-style-type:none;
+display:inline;
+color:black;
+float:right;
+padding-top:20;
+font-size:20;
+}
+a:hover{
+background-color: orange;
+}
+.container{
+
+text-align:middle;
+}
+.right_data ul li {
+list-style-type:none;
+padding-top: 5;
+
+}
+</style>
+
+<link rel="stylesheet" href="HTML\bootstrap\css\bootstrap.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container" style="border: 1px solid grey; width:100%; height=30; background-color:grey;" >
+	<div class="row" ng-app="roadiesApp">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 left_content" ng-controller="roadiesController">
+			 {{heading}}
+				<img ng-src="{{image}}"/>
+		</div>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8  right_content" ng-controller="roadiesController1"> 
+			<ul class="list-inline"> 
+			<li><a class="btn-btn-primary" href="#" style="text-decoration:none" ng-repeat="list in lists" ng-model="list">{{list}} &nbsp&nbsp</a> </li>
+			</ul>
+		
+		</div>
+	</div>
+</div>
+</body>
+</html>
